@@ -1,0 +1,120 @@
+openapi: 3.0.1
+info:
+  title: A swagger API
+  description: powered by Flasgger
+  termsOfService: /tos
+  version: 0.0.1
+servers:
+- url: /
+paths:
+  /:
+    get:
+      summary: Home page
+      description: Returns the main HTML page of the application.
+      responses:
+        "200":
+          description: HTML page
+          content:
+            text/html:
+              schema:
+                type: string
+                example: "<html>...</html>"
+  /another:
+    get:
+      summary: A GET endpoint for another resource with multiple query parameters
+      parameters:
+      - name: name
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: age
+        in: query
+        required: true
+        schema: {}
+      responses:
+        "200":
+          description: A response with query parameters
+          content: {}
+    put:
+      summary: A PUT endpoint for another resource
+      responses:
+        "200":
+          description: A response for another PUT request
+          content: {}
+  /api/v2/hello:
+    get:
+      summary: A simple GET endpoint to return a Hello World message
+      responses:
+        "200":
+          description: A Hello World message
+          content: {}
+  /api/v2/hellow:
+    get:
+      summary: A simple GET endpoint to return a Hello World message
+      responses:
+        "200":
+          description: A Hello World message
+          content: {}
+  /api/v2/hmm/hellow2:
+    get:
+      summary: A simple GET endpoint to return a Hello World message
+      responses:
+        "200":
+          description: A Hello World message
+          content: {}
+  /hello:
+    get:
+      summary: A simple GET endpoint to return a Hello World message
+      responses:
+        "200":
+          description: A personalized Hello message
+          content: {}
+    post:
+      summary: A simple POST endpoint to return a Hello World message
+      responses:
+        "200":
+          description: A Hello World POST message
+          content: {}
+  /hello/{name}:
+    get:
+      summary: A simple GET endpoint to return a Hello World message
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+          default: World
+      responses:
+        "200":
+          description: A personalized Hello message
+          content: {}
+    post:
+      summary: A simple POST endpoint to return a Hello World message
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+          default: World
+      responses:
+        "200":
+          description: A Hello World POST message
+          content: {}
+  /hello_world:
+    get:
+      summary: A simple GET endpoint to return a Hello World message
+      responses:
+        "200":
+          description: A personalized Hello message
+          content: {}
+    post:
+      summary: A simple POST endpoint to return a Hello World message
+      responses:
+        "200":
+          description: A Hello World POST message
+          content: {}
+components: {}
+x-original-swagger-version: "2.0"
