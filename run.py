@@ -4,7 +4,9 @@ from flasgger import Swagger
 
 app = Flask(__name__)
 api = Api(app)
-api_v2 = Api(app, prefix="/api/v2")
+api_v2 = Api(prefix="/api/v2")
+api_v2.init_app(app)
+api_v2.app = app
 swagger = Swagger(app)  # Initialize Flasgger
 
 @app.route('/', methods=['GET'])
